@@ -1,0 +1,54 @@
+:host {
+  display: grid;
+  grid-template-columns: repeat(2, 440px);
+  grid-column-gap: 232px;
+  height: 100vh;
+  align-items: center;
+}
+
+.login-form {
+  width: 440px;
+}
+
+.mb16 {
+  margin-bottom: 16px;
+}
+
+.mb32 {
+  margin-bottom: 32px;
+}
+
+.mb60 {
+  margin-bottom: 60px;
+}
+
+.buttons-wrapper {
+  position: relative;
+}
+
+.button-eye {
+  position: absolute;
+  background: none;
+  border: none;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 12px;
+  color: var(--transparent-white-color);
+  cursor: pointer;
+}
+
+.tt-input {
+  width: 100%;
+  display: block;
+  border: 1px solid var(--white-color);
+  border-radius: 4px;
+  padding: 12px 20px;
+  background: var(--black-color);
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  font-family: "JetBrains Mono";
+  margin-top: 8px;
+  color: var(--white-color);
+  box-sizing: border-box;
+}

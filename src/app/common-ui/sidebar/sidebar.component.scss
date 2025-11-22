@@ -1,0 +1,133 @@
+:host {
+  display: block;
+  padding: 20px 12px;
+  position: relative;
+  background: var(--black-color);
+}
+
+.ml28 {
+  margin-left: 28px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.main-menu-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.menu-item-button {
+  padding: 16px 12px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: var(--white-color);
+  display: grid;
+  grid-template-columns: 16px 1fr max-content;
+  grid-gap: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  align-items: center;
+  font-family: "JetBrains Mono";
+  width: 100%;
+  text-align: left;
+  border-radius: 2px;
+  text-decoration: none;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background: var(--hover-color);
+    color: var(--primary-purple);
+
+    svg {
+      color: var(--primary-purple);
+    }
+  }
+}
+
+.menu-item-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.menu-item-link {
+  color: var(--white-color);
+  text-decoration: none;
+  &:hover,
+  &:focus-visible {
+    background: var(--hover-color);
+    color: var(--primary-purple);
+  }
+}
+
+.medium-text {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  font-family: "JetBrains Mono";
+}
+
+.to-subscribers {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.to-subscribers-link {
+  text-decoration: none;
+  color: var(--primary-purple);
+}
+
+.arrow-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--primary-purple);
+}
+
+.sidebar-footer {
+  background: var(--hover-color);
+  border-radius: 2px;
+  padding: 4px 16px;
+  display: grid;
+  grid-template-columns: 32px 1fr 16px;
+  grid-gap: 12px;
+  align-items: center;
+  position: absolute;
+  bottom: 20px;
+  width: calc(100% - 24px);
+  box-sizing: border-box;
+}
+
+.footer-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.username-text {
+  color: var(--primary-purple);
+  font-weight: 700;
+}
+
+.button-settings {
+  svg {
+    width: 13px;
+    height: 13px;
+  }
+}
