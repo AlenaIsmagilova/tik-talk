@@ -21,15 +21,19 @@ export class ProfileService {
       .pipe(tap((res) => this.me.set(res)));
   }
 
-  getSubscribersShortList(): Observable<IProfile[]> {
+  getSubscribersShortList(subsAmount = 3): Observable<IProfile[]> {
     return this.http
       .get<ISuscribersPageble<IProfile>>(
         `${this.baseApiUrl}account/subscribers/`
       )
       .pipe(
         map((res) => {
-          return res.items.slice(0, 3);
+          return res.items.slice(0, subsAmount);
         })
       );
+  }
+
+  getAccountById(account_id: number) {
+    return this.http.get<IProfile>(`${this.baseApiUrl}account/${account_id}`);
   }
 }

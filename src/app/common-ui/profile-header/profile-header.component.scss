@@ -1,0 +1,97 @@
+:host {
+  padding: 24px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.name-wrapper {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.avatar {
+  width: 112px;
+  height: 112px;
+}
+
+.button {
+  margin-right: 142px;
+  width: 174px;
+  height: 44px;
+}
+
+.settings-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--black-color);
+}
+
+.profile-body {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  grid-gap: 64px;
+}
+
+.subscriber-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.subscribers-wrapper {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.subscriber-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.to-subscriber-search {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--white-color);
+  position: relative;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 8px;
+    background-color: var(--black-color);
+    top: 50%;
+    left: 50%;
+  }
+
+  &:before {
+    transform: translateY(-50%) translateX(-50%);
+  }
+
+  &:after {
+    transform: translateY(-50%) translateX(-50%) rotate(90deg);
+  }
+}
+
+.mb32 {
+  margin-bottom: 32px;
+}
+
+.mb16 {
+  margin-bottom: 16px;
+}
+
+.skills-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}

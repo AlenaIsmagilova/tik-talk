@@ -1,0 +1,47 @@
+@if (profile(); as profile) {
+<div class="container">
+  <div class="name-wrapper">
+    <img
+      [src]="profile.avatarUrl || 'assets/images/default-profile.svg'"
+      alt="avatar-in-profile-header"
+      class="avatar"
+    />
+    <h4>{{ profile.firstName }} {{ profile.lastName }}</h4>
+    <p class="regular">{{ profile.username }}</p>
+  </div>
+
+  <button class="button" [routerLink]="'/settings'">
+    Редактировать
+    <svg icon="settings" class="settings-icon"></svg>
+  </button>
+</div>
+
+<main class="profile-body">
+  <div></div>
+
+  <div>
+    <h6 class="mb16">Подписчики</h6>
+    <div class="subscribers-wrapper mb32">
+      @for(subscriber of subscribers$ | async; track subscriber.id) {
+      <a class="subscriber-btn" [routerLink]="['/profile', subscriber.id]">
+        <img [src]="subscriber.avatarUrl" class="subscriber-avatar" />
+      </a>
+      }
+      <a class="to-subscriber-search" [routerLink]="['/search']"> </a>
+    </div>
+
+    <h6 class="mb16">Навыки</h6>
+    <div class="skills-wrapper mb32">
+      <div
+        class="skills-tag"
+        *ngFor="let stack of ['123', '1256', '1331', '123']"
+      >
+        {{ stack }}
+      </div>
+    </div>
+
+    <h6 class="mb16">О себе</h6>
+    <p class="medium-text">{{ profile.description }}</p>
+  </div>
+</main>
+}
