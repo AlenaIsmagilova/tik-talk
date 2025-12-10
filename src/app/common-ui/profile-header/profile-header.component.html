@@ -2,7 +2,7 @@
 <div class="container">
   <div class="name-wrapper">
     <img
-      [src]="profile.avatarUrl || 'assets/images/default-profile.svg'"
+      [src]="profile.avatarUrl | avatarUrl"
       alt="avatar-in-profile-header"
       class="avatar"
     />
@@ -17,14 +17,17 @@
 </div>
 
 <main class="profile-body">
-  <div></div>
+  <app-post-feed></app-post-feed>
 
   <div>
-    <h6 class="mb16">Подписчики</h6>
+    <h6 class="mb16 subs-title">Подписчики</h6>
     <div class="subscribers-wrapper mb32">
       @for(subscriber of subscribers$ | async; track subscriber.id) {
       <a class="subscriber-btn" [routerLink]="['/profile', subscriber.id]">
-        <img [src]="subscriber.avatarUrl" class="subscriber-avatar" />
+        <img
+          [src]="subscriber.avatarUrl | avatarUrl"
+          class="subscriber-avatar"
+        />
       </a>
       }
       <a class="to-subscriber-search" [routerLink]="['/search']"> </a>
@@ -32,10 +35,7 @@
 
     <h6 class="mb16">Навыки</h6>
     <div class="skills-wrapper mb32">
-      <div
-        class="skills-tag"
-        *ngFor="let stack of ['123', '1256', '1331', '123']"
-      >
+      <div class="skills-tag" *ngFor="let stack of profile.stack">
         {{ stack }}
       </div>
     </div>

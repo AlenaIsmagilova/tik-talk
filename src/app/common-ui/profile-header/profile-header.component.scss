@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 24px;
 }
 
 .name-wrapper {
@@ -20,9 +21,12 @@
 }
 
 .button {
-  margin-right: 142px;
+  margin-right: 166px;
   width: 174px;
   height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .settings-icon {
@@ -35,6 +39,7 @@
   display: grid;
   grid-template-columns: 1fr 340px;
   grid-gap: 64px;
+  padding: 24px;
 }
 
 .subscriber-btn {
@@ -56,8 +61,8 @@
 }
 
 .to-subscriber-search {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background-color: var(--white-color);
   position: relative;
@@ -82,16 +87,6 @@
   }
 }
 
-.mb32 {
-  margin-bottom: 32px;
-}
-
-.mb16 {
-  margin-bottom: 16px;
-}
-
-.skills-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
+.subs-title {
+  margin-top: 0;
 }

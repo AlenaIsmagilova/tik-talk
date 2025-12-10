@@ -35,3 +35,11 @@ export interface ISuscribersPageble<T> {
   size: number;
   pages: number;
 }
+
+export interface IUpdateMe {
+  firstName: string | null;
+  lastName: string | null;
+  description: string | null;
+  city?: string;
+  stack: string[];
+}

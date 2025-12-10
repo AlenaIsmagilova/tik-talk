@@ -1,0 +1,84 @@
+<div>
+  <div class="name-wrapper">
+    <img
+      [src]="profileService.me()?.avatarUrl | avatarUrl"
+      alt="avatar-in-profile-header"
+      class="avatar"
+    />
+    <div>
+      <h4 class="name">
+        {{ profileService.me()?.firstName }} {{ profileService.me()?.lastName }}
+      </h4>
+      <p class="regular">{{ profileService.me()?.username }}</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="skills mt32">
+    <div class="skills-wrapper mb32">
+      <div class="skills-tag" *ngFor="let stack of profileService.me()?.stack">
+        {{ stack }}
+      </div>
+    </div>
+    <h6 class="mb16 mt16">Навыки</h6>
+  </div>
+
+  <h6 class="mb16 mt32">О себе</h6>
+  <p class="medium-text">{{ profileService.me()?.description }}</p>
+</div>
+
+<form class="profile-wrapper" [formGroup]="form" (ngSubmit)="onSave()">
+  <div class="profile-form">
+    <div class="two-columns">
+      <label class="tt-form-label">
+        <span class="tt-form-label-text">Имя</span>
+        <input type="text" class="tt-form-input" formControlName="firstName" />
+      </label>
+
+      <label class="tt-form-label">
+        <span class="tt-form-label-text">Фамилия</span>
+        <input type="text" class="tt-form-input" formControlName="lastName" />
+      </label>
+    </div>
+
+    <label class="tt-form-label">
+      <span class="tt-form-label-text">Telegram username</span>
+      <input type="text" class="tt-form-input" formControlName="username" />
+    </label>
+
+    <label class="tt-form-label">
+      <span class="tt-form-label-text">О себе</span>
+      <textarea
+        formControlName="description"
+        class="tt-form-input tt-textarea"
+        rows="4"
+      ></textarea>
+    </label>
+
+    <label class="tt-form-label">
+      <span class="tt-form-label-text">Аватарка</span>
+      <app-avatar-upload></app-avatar-upload>
+    </label>
+
+    <label class="tt-form-label">
+      <span class="tt-form-label-text">Навыки</span>
+      <input type="text" class="tt-form-input" formControlName="stack" />
+    </label>
+  </div>
+
+  <div class="buttons-container">
+    <div class="right-btns-wrapper">
+      <button class="button logout-btn" type="button">
+        <svg icon="delete" class="delete-icon"></svg>
+      </button>
+      <button class="button logout-btn" type="button" (click)="onLogoutClick()">
+        <svg icon="logout" class="logout-icon"></svg>
+      </button>
+    </div>
+    <div class="btns-wrapper">
+      <button class="button cancel-btn">Отмена</button>
+      <button class="button" type="submit">Сохранить</button>
+    </div>
+  </div>
+</form>

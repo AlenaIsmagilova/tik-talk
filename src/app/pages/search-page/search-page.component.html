@@ -1,4 +1,40 @@
 <div class="profile-wrapper">
+  <form class="search-form" [formGroup]="form">
+    <div class="inputs-wrapper">
+      <label class="search-form-label">
+        <span class="search-form-label-text">Имя пользователя</span>
+        <input
+          class="search-form-input"
+          formControlName="firstName"
+          type="text"
+          placeholder="Выберите"
+        />
+      </label>
+
+      <label class="search-form-label">
+        <span class="search-form-label-text">Фамилия пользователя</span>
+        <input
+          class="search-form-input"
+          formControlName="lastName"
+          type="text"
+          placeholder="Выберите"
+        />
+      </label>
+
+      <label class="search-form-label">
+        <span class="search-form-label-text">Навыки</span>
+        <input
+          class="search-form-input"
+          formControlName="stack"
+          type="text"
+          placeholder="Выберите"
+        />
+      </label>
+    </div>
+    <button class="button filter-button" type="submit">
+      <svg icon="filter" class="filter-icon"></svg>
+    </button>
+  </form>
   <ng-container *ngFor="let profile of profiles">
     <app-profile-card [profile]="profile"></app-profile-card>
   </ng-container>

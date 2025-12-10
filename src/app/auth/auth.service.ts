@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ILoginResponse } from '../interfaces/profile.interface';
 import { catchError, tap } from 'rxjs/operators';
@@ -45,11 +45,20 @@ export class AuthService {
   }
 
   public logout() {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.accessToken}`,
+    });
+
     this.cookieService.deleteAll();
     this.accessToken = null;
     this.refreshToken = null;
     this.router.navigate(['/login']);
-    return this.httpService.post<string>(`${this.baseApiUrl}auth/logout`, null);
+
+    return this.httpService.post<string>(
+      `${this.baseApiUrl}auth/logout`,
+      null,
+      { headers }
+    );
   }
 
   public refreshAuthToken() {

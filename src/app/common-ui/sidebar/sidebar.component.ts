@@ -6,6 +6,7 @@ import { SubscriberCardComponent } from './subscriber-card/subscriber-card.compo
 import { ProfileService } from '../../services/profile.service';
 import { Observable, firstValueFrom } from 'rxjs';
 import { IProfile } from '../../interfaces/profile.interface';
+import { AvatarUrlPipe } from '../../pipes/avatar-url.pipe';
 
 @Component({
   selector: 'app-sidebar',
@@ -16,6 +17,7 @@ import { IProfile } from '../../interfaces/profile.interface';
     SubscriberCardComponent,
     AsyncPipe,
     CommonModule,
+    AvatarUrlPipe,
   ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
@@ -33,7 +35,7 @@ export class SidebarComponent {
     {
       label: 'Моя страница',
       icon: 'home-icon',
-      path: 'profile',
+      path: 'profile/me',
     },
     {
       label: 'Чаты',

@@ -3,3 +3,59 @@
   flex-direction: column;
   gap: 8px;
 }
+
+.search-form {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  box-shadow: var(--dark-shadow);
+  padding: 16px 20px;
+  border: 1px solid var(--white-color);
+  align-items: center;
+}
+
+.inputs-wrapper {
+  display: grid;
+  grid-template-columns: 212px 212px 212px 1fr;
+  gap: 40px;
+}
+
+.search-form-label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.search-form-label-text {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  color: var(--transparent-white-color);
+}
+
+.search-form-input {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  border: none;
+  border-bottom: 1px solid var(--white-color);
+  height: 33px;
+  background: none;
+  color: var(--white-color);
+
+  &:focus-visible {
+    outline: 1px solid var(--primary-purple);
+  }
+}
+
+.filter-button {
+  width: 46px;
+  height: 46px;
+  padding: 0;
+}
+
+.filter-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--white-color);
+}

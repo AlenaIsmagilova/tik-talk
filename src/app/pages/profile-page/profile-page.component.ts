@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { ProfileHeaderComponent } from '../../common-ui/profile-header/profile-header.component';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ProfileService } from '../../services/profile.service';
 import { switchMap } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
@@ -16,10 +16,7 @@ export class ProfilePageComponent {
   route = inject(ActivatedRoute);
   me$;
 
-  constructor(
-    private profileService: ProfileService
-  ) // private route: ActivatedRoute
-  {
+  constructor(private profileService: ProfileService) {
     this.me$ = toObservable(this.profileService.me);
   }
 

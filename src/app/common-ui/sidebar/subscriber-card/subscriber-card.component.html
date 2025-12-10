@@ -1,2 +1,6 @@
-<img class="subscriber-avatar" [src]="profile.avatarUrl" alt="avatar" />
+<img
+  class="subscriber-avatar"
+  [src]="profile.avatarUrl | avatarUrl"
+  alt="avatar"
+/>
 <strong class="subtitle">{{ profile.firstName }} {{ profile.lastName }}</strong>

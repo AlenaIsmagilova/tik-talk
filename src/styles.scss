@@ -7,6 +7,7 @@
   --white-color-rgb: 255, 255, 255;
   --transparent-white-color: rgba(var(--white-color-rgb), 0.75);
   --hover-color: #161616;
+  --dark-shadow: 4px 4px 0 rgb(0, 0, 0, 0.4);
 }
 
 body {
@@ -44,6 +45,12 @@ body {
   font-family: "JetBrains Mono";
   cursor: pointer;
   display: block;
+}
+
+.cancel-btn {
+  background-color: transparent;
+  color: var(--white-color);
+  border: 1px solid var(--white-color);
 }
 
 h1 {
@@ -89,4 +96,59 @@ h6 {
   font-weight: 700;
   // font-family: "JetBrains Mono";
   display: block;
+}
+
+.tt-form-input {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  border: none;
+  border-bottom: 1px solid var(--white-color);
+  height: 33px;
+  background: none;
+  color: var(--white-color);
+
+  &:focus-visible {
+    outline: 1px solid var(--primary-purple);
+  }
+}
+
+.tt-form-label {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tt-form-label-text {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  color: var(--transparent-white-color);
+}
+
+.tt-textarea {
+  height: 84px;
+  resize: none;
+}
+
+.mb32 {
+  margin-bottom: 32px;
+}
+
+.mb16 {
+  margin-bottom: 16px;
+}
+
+.mt16 {
+  margin-top: 16px;
+}
+
+.skills-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.mt32 {
+  margin-top: 32px;
 }

@@ -1,6 +1,10 @@
 <div *ngIf="profile" class="profile-card">
   <div class="main-info">
-    <img [src]="profile.avatarUrl" alt="avatar" class="profile-avatar" />
+    <img
+      [src]="profile.avatarUrl | avatarUrl"
+      alt="avatar"
+      class="profile-avatar"
+    />
     <div class="profile-name">
       <strong class="name h6"
         >{{ profile.firstName }} {{ profile.lastName }}</strong

@@ -5,10 +5,19 @@ import { Observable } from 'rxjs';
 import { RouterLink } from '@angular/router';
 import { ProfileService } from '../../services/profile.service';
 import { AsyncPipe, NgFor } from '@angular/common';
+import { PostFeedComponent } from '../../pages/profile-page/post-feed/post-feed.component';
+import { AvatarUrlPipe } from '../../pipes/avatar-url.pipe';
 
 @Component({
   selector: 'app-profile-header',
-  imports: [SvgIconComponent, RouterLink, AsyncPipe, NgFor],
+  imports: [
+    SvgIconComponent,
+    RouterLink,
+    AsyncPipe,
+    NgFor,
+    PostFeedComponent,
+    AvatarUrlPipe,
+  ],
   templateUrl: './profile-header.component.html',
   styleUrl: './profile-header.component.scss',
 })

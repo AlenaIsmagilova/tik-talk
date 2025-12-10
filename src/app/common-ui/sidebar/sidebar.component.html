@@ -27,10 +27,14 @@
 
 <footer class="sidebar-footer">
   @if (me(); as me) {
-  <img [src]="me.avatarUrl" alt="profile-avatar" class="footer-avatar" />
+  <img
+    [src]="me.avatarUrl | avatarUrl"
+    alt="profile-avatar"
+    class="footer-avatar"
+  />
   <div class="medium-text username-text">{{ me.username }}</div>
   <a [routerLink]="['settings']" class="button-settings">
-    <svg icon="settings"></svg>
+    <svg icon="settings" class="settings-icon"></svg>
   </a>
 
   } @else {
