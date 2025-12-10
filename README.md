@@ -1,59 +1,35 @@
-# TikTalk
+# Tik - talk – Social media
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.19.
+##### Небольшое Angular приложение, с личным кабинетом, поиском и добавлением подписчиков.
 
-## Development server
+<!-- ### [Демо](https://alenaismagilova.github.io/test-task-only/) -->
 
-To start a local development server, run:
+### Стек
 
-```bash
-ng serve
+1. Angular 19, TypeScript 5
+2. Rxjs 7
+3. scss
+
+<!-- ### Быстрый старт
+
+1. Клонирование и установка зависимостей
+
+```markdown
+git clone https://github.com/AlenaIsmagilova/test-task-only.git
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```markdown
+cd test-task-only
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
+```markdown
+npm install
 ```
 
-## Building
+2. Запуск проекта
 
-To build the project run:
-
-```bash
-ng build
+```markdown
+npm run dev
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+3. Откройте в браузере http://localhost:5000 -->
