@@ -59,9 +59,6 @@ export class SearchPageComponent {
       next: (res) => {
         this.profiles = res;
       },
-      error: (err) => {
-        console.log('err from search page ', err);
-      },
     });
   }
 

@@ -67,3 +67,12 @@
   height: 16px;
   color: var(--white-color);
 }
+
+.scrollable-container {
+  height: calc(100vh - 170px);
+  overflow: auto;
+  scrollbar-width: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

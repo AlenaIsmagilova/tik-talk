@@ -1,0 +1,44 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.post-container {
+  max-height: 689px;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 16px;
+  background-color: var(--black-color);
+  border: 1px solid var(--white-color);
+  padding: 20px;
+}
+
+.avatar-in-post {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.post-main-info {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.author-name {
+  margin: 0;
+  font-weight: 500;
+}
+
+.author-date {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.post-info-wrapper {
+  display: flex;
+  flex-direction: column;
+}

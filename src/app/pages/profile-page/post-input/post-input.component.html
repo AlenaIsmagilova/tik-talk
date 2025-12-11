@@ -1,1 +1,27 @@
-<p>post-input works!</p>
+<form class="form" [formGroup]="form" (ngSubmit)="onAddPostClick()">
+  <img
+    [src]="me?.avatarUrl | avatarUrl"
+    alt="avatar-in-post-input"
+    class="avatar"
+  />
+  <input
+    class="post-input"
+    type="text"
+    placeholder="Напишите что-нибудь"
+    formControlName="content"
+  />
+  <button class="button post-button" type="submit">
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M1.34375 14V9.34375L11.3438 8L1.34375 6.65625V2L15.3438 8L1.34375 14Z"
+        fill="black"
+      />
+    </svg>
+  </button>
+</form>

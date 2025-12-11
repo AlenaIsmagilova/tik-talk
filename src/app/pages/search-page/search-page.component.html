@@ -37,8 +37,6 @@
       [disabled]="!form.dirty || isFormEmpty"
       (click)="form.reset()"
     >
-      <!-- <svg icon="close" class="close-icon"></svg> -->
-
       <svg
         width="10"
         height="10"
@@ -55,7 +53,9 @@
       </svg>
     </button>
   </form>
-  <ng-container *ngFor="let profile of profiles">
-    <app-profile-card [profile]="profile"></app-profile-card>
-  </ng-container>
+  <div class="scrollable-container">
+    <ng-container *ngFor="let profile of profiles">
+      <app-profile-card [profile]="profile"></app-profile-card>
+    </ng-container>
+  </div>
 </div>

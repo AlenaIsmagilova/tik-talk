@@ -1,4 +1,4 @@
-<div *ngIf="profile" class="profile-card">
+<div *ngIf="profile" class="profile-card" (click)="onProfileClick(profile.id)">
   <div class="main-info">
     <img
       [src]="profile.avatarUrl | avatarUrl"
