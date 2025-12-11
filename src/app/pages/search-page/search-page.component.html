@@ -7,7 +7,7 @@
           class="search-form-input"
           formControlName="firstName"
           type="text"
-          placeholder="Выберите"
+          placeholder="Ввведите имя"
         />
       </label>
 
@@ -17,7 +17,7 @@
           class="search-form-input"
           formControlName="lastName"
           type="text"
-          placeholder="Выберите"
+          placeholder="Ввведите фамилию"
         />
       </label>
 
@@ -27,12 +27,32 @@
           class="search-form-input"
           formControlName="stack"
           type="text"
-          placeholder="Выберите"
+          placeholder="Ввведите навык(и)"
         />
       </label>
     </div>
-    <button class="button filter-button" type="submit">
-      <svg icon="filter" class="filter-icon"></svg>
+    <button
+      class="button close-button"
+      type="button"
+      [disabled]="!form.dirty || isFormEmpty"
+      (click)="form.reset()"
+    >
+      <!-- <svg icon="close" class="close-icon"></svg> -->
+
+      <svg
+        width="10"
+        height="10"
+        viewBox="0 0 10 10"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        id="close"
+        class="close-icon"
+      >
+        <path
+          d="M9.3125 0.9375L5.59375 4.65625L9.3125 8.375L8.375 9.3125L4.65625 5.59375L0.9375 9.3125L0 8.375L3.71875 4.65625L0 0.9375L0.9375 0L4.65625 3.71875L8.375 0L9.3125 0.9375Z"
+          fill="currentColor"
+        />
+      </svg>
     </button>
   </form>
   <ng-container *ngFor="let profile of profiles">

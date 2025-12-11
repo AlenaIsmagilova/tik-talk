@@ -48,14 +48,22 @@
   }
 }
 
-.filter-button {
+.close-button {
   width: 46px;
   height: 46px;
   padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: auto;
+  }
 }
 
-.filter-icon {
-  width: 18px;
-  height: 18px;
+.close-icon {
+  width: 16px;
+  height: 16px;
   color: var(--white-color);
 }

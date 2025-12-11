@@ -1,15 +1,14 @@
-import { debounceTime, map, merge, scan, switchMap } from 'rxjs';
 import { Component } from '@angular/core';
+import { NgFor } from '@angular/common';
+import { debounceTime, map, merge, scan, switchMap } from 'rxjs';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { IProfile } from '../../interfaces/profile.interface';
 import { ProfileService } from '../../services/profile.service';
-import { AsyncPipe, NgFor } from '@angular/common';
 import { ProfileCardComponent } from '../../common-ui/profile-card/profile-card.component';
-import { SvgIconComponent } from '../../common-ui/svg-icon/svg-icon.component';
 
 @Component({
   selector: 'app-search-page',
-  imports: [ProfileCardComponent, NgFor, SvgIconComponent, ReactiveFormsModule],
+  imports: [ProfileCardComponent, NgFor, ReactiveFormsModule],
   templateUrl: './search-page.component.html',
   styleUrl: './search-page.component.scss',
 })
@@ -64,5 +63,13 @@ export class SearchPageComponent {
         console.log('err from search page ', err);
       },
     });
+  }
+
+  get isFormEmpty(): boolean {
+    if (!this.form) return true;
+
+    const { firstName, lastName, stack } = this.form.value;
+
+    return !firstName && !lastName && !stack;
   }
 }
