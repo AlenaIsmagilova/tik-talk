@@ -1,12 +1,7 @@
-:host {
-  padding: 24px;
-}
-
 .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px;
 }
 
 .name-wrapper {
@@ -16,8 +11,9 @@
 }
 
 .avatar {
-  width: 112px;
-  height: 112px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
 }
 
 .button {
@@ -39,7 +35,7 @@
   display: grid;
   grid-template-columns: 1fr 340px;
   grid-gap: 64px;
-  padding: 24px;
+  padding-top: 24px;
 }
 
 .subscriber-btn {
@@ -52,6 +48,7 @@
   display: flex;
   gap: 6px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .subscriber-avatar {
@@ -89,4 +86,23 @@
 
 .subs-title {
   margin-top: 0;
+}
+
+.subs-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-info-wrapper {
+  padding: 0 24px;
+}
+
+.subs-count {
+  width: 26px;
+  height: 18px;
+  color: var(--black-color);
+  background-color: var(--green-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

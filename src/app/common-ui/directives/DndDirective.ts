@@ -34,7 +34,6 @@ export class DndDirective {
   onDrop(event: DragEvent) {
     event.preventDefault();
     event.stopPropagation();
-    console.log('drop');
 
     this.fileover = false;
 

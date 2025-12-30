@@ -1,20 +1,24 @@
-<div class="post-container" *ngFor="let post of posts">
-  <img
-    [src]="me!.avatarUrl | avatarUrl"
-    alt="avatar-in-post"
-    class="avatar-in-post"
-  />
+<div class="main-block" *ngFor="let post of posts">
+  <div class="post-container">
+    <img
+      [src]="profile.avatarUrl | avatarUrl"
+      alt="avatar-in-post"
+      class="avatar-in-post"
+    />
 
-  <div>
-    <div class="post-info-wrapper">
-      <div class="post-main-info">
-        <p class="regular author-name">
-          {{ `${post.author.firstName} ${post.author.lastName}`  }}
-        </p>
-        <p class="author-date">{{ getDate(post.createdAt) }}</p>
+    <div>
+      <div class="post-info-wrapper">
+        <div class="post-main-info">
+          <p class="regular author-name">
+            {{ `${post.author.firstName} ${post.author.lastName}`  }}
+          </p>
+          <p class="author-date">{{ getDate(post.createdAt) }}</p>
+        </div>
+
+        <p>{{ post.content }}</p>
+
+        <app-comment-block [comments]="post.comments"></app-comment-block>
       </div>
-
-      <p>{{ post.content }}</p>
     </div>
   </div>
 </div>

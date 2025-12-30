@@ -10,12 +10,12 @@
 2. Rxjs 7
 3. scss
 
-<!-- ### Быстрый старт
+### Быстрый старт
 
 1. Клонирование и установка зависимостей
 
 ```markdown
-git clone https://github.com/AlenaIsmagilova/test-task-only.git
+git clone https://github.com/AlenaIsmagilova/tik-talk.git
 ```
 
 ```markdown
@@ -23,13 +23,25 @@ cd test-task-only
 ```
 
 ```markdown
-npm install
+ng build
 ```
 
 2. Запуск проекта
 
 ```markdown
-npm run dev
+ng serve
 ```
 
-3. Откройте в браузере http://localhost:5000 -->
+3. Откройте в браузере http://localhost:4200
+
+4. Используйте для входа следующий логин:
+
+```markdown
+alenaIsmagilova178
+```
+
+5. Используйте пароль:
+
+```markdown
+5GoTpkVqBH
+```

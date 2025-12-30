@@ -35,6 +35,14 @@ export class ProfileService {
       );
   }
 
+  getSubscribersForUser(accountId: number): Observable<IProfile[]> {
+    return this.http
+      .get<ISuscribersPageble<IProfile>>(
+        `${baseApiUrl}account/subscribers/${accountId}`
+      )
+      .pipe(map((res) => res.items));
+  }
+
   getAccountById(account_id: number) {
     return this.http.get<IProfile>(`${baseApiUrl}account/${account_id}`);
   }

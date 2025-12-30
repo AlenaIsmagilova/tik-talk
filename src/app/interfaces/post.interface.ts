@@ -20,7 +20,14 @@ export interface IPost {
   updatedAt: string;
   likes: number;
   likesUsers: string[];
-  comments: string[];
+  comments: IComment[];
+}
+
+export interface IComment {
+  text: string;
+  authorId: number;
+  postId: number;
+  commentId: number;
 }
 
 export interface ICreatePost {

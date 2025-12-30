@@ -9,19 +9,29 @@ import { tap } from 'rxjs';
 })
 export class PostService {
   private _posts!: IPost[];
+  private _mySubscriptionsPost!: IPost[];
   constructor(private http: HttpClient) {}
 
-  get posts(): IPost[] {
-    return this._posts;
+  // get posts(): IPost[] {
+  //   return this._posts;
+  // }
+
+  get mySubscriptionsPost(): IPost[] {
+    return this._mySubscriptionsPost;
   }
 
   getPosts(userId: number) {
-    return this.http
-      .get<IPost[]>(`${baseApiUrl}post/`, { params: { userId } })
-      .pipe(tap((res) => (this._posts = res)));
+    return this.http.get<IPost[]>(`${baseApiUrl}post/`, { params: { userId } });
+    // .pipe(tap((res) => (this._posts = res)));
   }
 
   addPost(form: ICreatePost) {
     return this.http.post<IPost>(`${baseApiUrl}post/`, form);
+  }
+
+  getMySubscribtionsPosts() {
+    return this.http
+      .get<IPost[]>(`${baseApiUrl}post/my_subscriptions`)
+      .pipe(tap((res) => (this._mySubscriptionsPost = res)));
   }
 }

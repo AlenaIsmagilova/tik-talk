@@ -1,35 +1,42 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AvatarUrlPipe } from '../../../pipes/avatar-url.pipe';
 import { IProfile } from '../../../interfaces/profile.interface';
 import { PostService } from '../../../services/post.service';
 import { DatePipe, NgFor } from '@angular/common';
-import { ProfileService } from '../../../services/profile.service';
+import { CommentBlockComponent } from '../comment-block/comment-block.component';
+import { IPost } from '../../../interfaces/post.interface';
 
 @Component({
   selector: 'app-post',
-  imports: [AvatarUrlPipe, NgFor],
+  imports: [AvatarUrlPipe, NgFor, CommentBlockComponent],
   templateUrl: './post.component.html',
   styleUrl: './post.component.scss',
   providers: [DatePipe],
 })
 export class PostComponent {
-  me: IProfile | null;
+  posts: IPost[];
+  private _profile: IProfile;
+  // @Input() profile!: IProfile;
 
-  constructor(
-    private postService: PostService,
-    private datePipe: DatePipe,
-    private profileService: ProfileService
-  ) {
-    this.me = this.profileService.me();
+  @Input()
+  set profile(profile: IProfile) {
+    this._profile = profile;
+    this._getPost();
   }
 
-  get posts() {
-    return this.postService.posts;
+  get profile(): IProfile {
+    return this._profile;
   }
 
-  ngOnInit() {
-    this.postService.getPosts(this.me!.id).subscribe();
-  }
+  constructor(private postService: PostService, private datePipe: DatePipe) {}
+
+  // get posts() {
+  //   return this.postService.posts;
+  // }
+
+  // ngOnInit() {
+  //   this.postService.getPosts(this.profile.id).subscribe();
+  // }
 
   getDate(date: string) {
     const onlyDay = this.datePipe
@@ -44,5 +51,11 @@ export class PostComponent {
     } else {
       return this.datePipe.transform(date, 'd.M.yy');
     }
+  }
+
+  private _getPost() {
+    this.postService
+      .getPosts(this.profile.id)
+      .subscribe((posts) => (this.posts = posts));
   }
 }

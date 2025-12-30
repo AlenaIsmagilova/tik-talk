@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AvatarUrlPipe } from '../../../pipes/avatar-url.pipe';
 import { IProfile } from '../../../interfaces/profile.interface';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
@@ -14,15 +14,12 @@ import { switchMap } from 'rxjs';
 })
 export class PostInputComponent {
   form!: FormGroup;
-  me: IProfile | null;
-
+  @Input() profile!: IProfile;
   constructor(
     private formBuilder: FormBuilder,
     private postService: PostService,
     private profileService: ProfileService
-  ) {
-    this.me = this.profileService.me();
-  }
+  ) {}
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -36,7 +33,7 @@ export class PostInputComponent {
         content: this.form.value.content,
         authorId: this.profileService.me()!.id,
       })
-      .pipe(switchMap(() => this.postService.getPosts(this.me!.id)))
+      .pipe(switchMap(() => this.postService.getPosts(this.profile.id)))
       .subscribe(() => this.form.reset());
   }
 }

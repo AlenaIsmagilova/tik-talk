@@ -1,7 +1,7 @@
 import { Component, WritableSignal } from '@angular/core';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 import { AsyncPipe, CommonModule, NgFor } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 import { SubscriberCardComponent } from './subscriber-card/subscriber-card.component';
 import { ProfileService } from '../../services/profile.service';
 import { Observable, firstValueFrom } from 'rxjs';
@@ -13,7 +13,7 @@ import { AvatarUrlPipe } from '../../pipes/avatar-url.pipe';
   imports: [
     SvgIconComponent,
     NgFor,
-    RouterLink,
+    RouterModule,
     SubscriberCardComponent,
     AsyncPipe,
     CommonModule,

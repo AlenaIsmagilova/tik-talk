@@ -1,2 +1,5 @@
-<app-post-input></app-post-input>
-<app-post></app-post>
+@if((route.params | async)?.['id'] === 'me') {
+<app-post-input [profile]="profile"></app-post-input>
+}
+
+<app-post [profile]="profile"></app-post>

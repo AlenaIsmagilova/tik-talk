@@ -72,7 +72,7 @@ export class SettingsPageComponent {
           return this.profileService.getMe();
         })
       )
-      .subscribe((totalResult) => console.log(totalResult));
+      .subscribe();
 
     if (this.avatarUploader.avatar) {
       this.profileService
