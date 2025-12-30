@@ -19,7 +19,7 @@ git clone https://github.com/AlenaIsmagilova/tik-talk.git
 ```
 
 ```markdown
-cd test-task-only
+cd tik-talk
 ```
 
 ```markdown
